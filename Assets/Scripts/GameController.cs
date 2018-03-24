@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour {
 		foreach (Location loc in locations) {
 			if (loc.locationPanel == startLocationPanel) {
 				currentLocation = loc;
+				mapLocationTextbox.text = currentLocation.caption;
 				break;
 			}
 		}
@@ -68,12 +69,12 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void ShowMap() {
-		mapLocationTextbox.text = currentLocation.caption;
 		mapPanel.SetActive (true);
 		locationPanel.SetActive (false);
 	}
 
 	void ChangeLocation(Location newLocation) {
+		mapLocationTextbox.text = newLocation.caption;
 		currentLocation.locationPanel.SetActive (false);
 		newLocation.locationPanel.SetActive (true);
 
