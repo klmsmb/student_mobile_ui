@@ -3985,8 +3985,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 40.3125, y: -16.199951}
-  m_SizeDelta: {x: -109.25, y: -63.22}
+  m_AnchoredPosition: {x: 40.8125, y: -16.199951}
+  m_SizeDelta: {x: -108.25, y: -63.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1143508808
 MonoBehaviour:
@@ -4628,7 +4628,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1448973794}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1459408200}
+        m_MethodName: GetRadiationDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1448973794
@@ -4781,12 +4792,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172454b81c0301344b9e5bf3d823b1cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Screen0Text: {fileID: 961934170}
+  screen0Text: {fileID: 961934170}
   currentScreen: {fileID: 1674942018}
-  Screen3Input: {fileID: 1980578500}
-  Screen4: {fileID: 392677935}
-  Screen5: {fileID: 1312675646}
-  Screen3Text: {fileID: 735054082}
+  screen3Input: {fileID: 1980578500}
+  screen4: {fileID: 392677935}
+  screen5: {fileID: 1312675646}
+  screen3Text: {fileID: 735054082}
+  player: {fileID: 1647066664}
 --- !u!1 &1526553652
 GameObject:
   m_ObjectHideFlags: 0

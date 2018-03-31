@@ -9,10 +9,12 @@ public class PlayerController : MonoBehaviour {
 
 	public Text moneyText;
 	public GameObject healPointsPanel;
-	float healPointsPanelBaseWidth;
+	Vector3 healPointsPanelBaseCoord;
 
 	void Awake() {
 		AddMoney (0);
+
+		healPointsPanelBaseCoord = healPointsPanel.transform.localPosition;
 	}
 
 	public void AddMoney(int amount) {
@@ -27,7 +29,14 @@ public class PlayerController : MonoBehaviour {
 		if (amount > 0) {
 			healPoints -= amount;
 			if (healPoints <= 0) {
-				// TODO player is dead
+				healPoints = 0;
+			}
+
+			healPointsPanel.transform.localScale = new Vector3 (healPoints / 100.0f, 1.0f, 1.0f);
+			healPointsPanel.transform.localPosition = healPointsPanelBaseCoord;
+
+			if (healPoints <= 0) {
+				// TODO player death
 			}
 		}
 	}
@@ -38,6 +47,9 @@ public class PlayerController : MonoBehaviour {
 			if (healPoints > 100) {
 				healPoints = 100;
 			}
+
+			healPointsPanel.transform.localScale = new Vector3 (healPoints / 100.0f, 1.0f, 1.0f);
+			healPointsPanel.transform.localPosition = healPointsPanelBaseCoord;
 		}
 	}
 }
